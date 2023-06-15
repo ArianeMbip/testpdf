@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel", "SharedKernel\SharedKernel.csproj", "{10BFBA3D-3FD5-4B02-A234-BB0F24E7BBBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiTestMongo", "ApiTestMongo", "{29A40D6B-74F1-4512-97BC-F78BE2B7ED00}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{99E8ABF2-AFEA-42F2-9011-2260160646CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTestMongo", "ApiTestMongo\src\ApiTestMongo\ApiTestMongo.csproj", "{F72C0019-E6D4-4518-8240-0BC4C845A978}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0CCB4F0E-980C-4354-9BDA-AB108204FE44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTestMongo.IntegrationTests", "ApiTestMongo\tests\ApiTestMongo.IntegrationTests\ApiTestMongo.IntegrationTests.csproj", "{443327E0-9C92-4E96-B7A8-02165B511F31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTestMongo.FunctionalTests", "ApiTestMongo\tests\ApiTestMongo.FunctionalTests\ApiTestMongo.FunctionalTests.csproj", "{00474170-62D8-4293-B7A5-A87F5D276E46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTestMongo.SharedTestHelpers", "ApiTestMongo\tests\ApiTestMongo.SharedTestHelpers\ApiTestMongo.SharedTestHelpers.csproj", "{BBA98A49-BE7E-4C0E-A0C5-4E10E94BF62D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTestMongo.UnitTests", "ApiTestMongo\tests\ApiTestMongo.UnitTests\ApiTestMongo.UnitTests.csproj", "{B799B609-09E4-4C45-A508-E301ED812C77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10BFBA3D-3FD5-4B02-A234-BB0F24E7BBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10BFBA3D-3FD5-4B02-A234-BB0F24E7BBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10BFBA3D-3FD5-4B02-A234-BB0F24E7BBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10BFBA3D-3FD5-4B02-A234-BB0F24E7BBBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F72C0019-E6D4-4518-8240-0BC4C845A978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F72C0019-E6D4-4518-8240-0BC4C845A978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F72C0019-E6D4-4518-8240-0BC4C845A978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F72C0019-E6D4-4518-8240-0BC4C845A978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{443327E0-9C92-4E96-B7A8-02165B511F31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{443327E0-9C92-4E96-B7A8-02165B511F31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{443327E0-9C92-4E96-B7A8-02165B511F31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{443327E0-9C92-4E96-B7A8-02165B511F31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00474170-62D8-4293-B7A5-A87F5D276E46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00474170-62D8-4293-B7A5-A87F5D276E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00474170-62D8-4293-B7A5-A87F5D276E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00474170-62D8-4293-B7A5-A87F5D276E46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBA98A49-BE7E-4C0E-A0C5-4E10E94BF62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA98A49-BE7E-4C0E-A0C5-4E10E94BF62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA98A49-BE7E-4C0E-A0C5-4E10E94BF62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA98A49-BE7E-4C0E-A0C5-4E10E94BF62D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B799B609-09E4-4C45-A508-E301ED812C77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B799B609-09E4-4C45-A508-E301ED812C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B799B609-09E4-4C45-A508-E301ED812C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B799B609-09E4-4C45-A508-E301ED812C77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{99E8ABF2-AFEA-42F2-9011-2260160646CC} = {29A40D6B-74F1-4512-97BC-F78BE2B7ED00}
+		{F72C0019-E6D4-4518-8240-0BC4C845A978} = {99E8ABF2-AFEA-42F2-9011-2260160646CC}
+		{0CCB4F0E-980C-4354-9BDA-AB108204FE44} = {29A40D6B-74F1-4512-97BC-F78BE2B7ED00}
+		{443327E0-9C92-4E96-B7A8-02165B511F31} = {0CCB4F0E-980C-4354-9BDA-AB108204FE44}
+		{00474170-62D8-4293-B7A5-A87F5D276E46} = {0CCB4F0E-980C-4354-9BDA-AB108204FE44}
+		{BBA98A49-BE7E-4C0E-A0C5-4E10E94BF62D} = {0CCB4F0E-980C-4354-9BDA-AB108204FE44}
+		{B799B609-09E4-4C45-A508-E301ED812C77} = {0CCB4F0E-980C-4354-9BDA-AB108204FE44}
+	EndGlobalSection
+EndGlobal

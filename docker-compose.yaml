@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+  dockerconfig-db:
+    image: postgres
+    restart: always
+    ports:
+      - '58289:5432'
+    environment:
+      POSTGRES_USER: SA
+      POSTGRES_PASSWORD: #localDockerPassword#
+      POSTGRES_DB: dev_dockerconfig
+    volumes:
+      - dockerconfig-data:/var/lib/postgresql/data
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+#    port mappings: https://www.jaegertracing.io/docs/1.32/getting-started/
+    ports:
+      - "58356:5775/udp"
+      - "58355:6831/udp"
+      - "58357:6832/udp"
+      - "58358:5778"
+      - "58359:16686"
+      - "58360:14250"
+      - "58361:14268"
+      - "58362:14269"
+      - "58363:9411"
+
+        
+volumes:
+  # compose volumes marker - do not delete
+  dockerconfig-data:
