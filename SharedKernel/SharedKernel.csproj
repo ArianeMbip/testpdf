@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AspNetCore.Reporting" Version="2.1.0" />
+    <PackageReference Include="AspNetCore.ReportingServices" Version="2.1.0" />
     <PackageReference Include="FluentValidation" Version="11.2.2" />
+    <PackageReference Include="Refit" Version="7.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
   </ItemGroup>
 
 </Project>

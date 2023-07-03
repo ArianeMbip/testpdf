@@ -10,8 +10,9 @@ using Microsoft.AspNetCore.Mvc.Filters;
 public sealed class ErrorHandlerFilterAttribute : ExceptionFilterAttribute
 {
     private readonly IDictionary<Type, Action<ExceptionContext>> _exceptionHandlers;
+    private readonly ILogger<ErrorHandlerFilterAttribute> _logger;
 
-    public ErrorHandlerFilterAttribute()
+    public ErrorHandlerFilterAttribute(ILogger<ErrorHandlerFilterAttribute> logger)
     {
         // Register known exception types and handlers.
         _exceptionHandlers = new Dictionary<Type, Action<ExceptionContext>>
@@ -23,10 +24,13 @@ public sealed class ErrorHandlerFilterAttribute : ExceptionFilterAttribute
                 { typeof(NoRolesAssignedException), HandleNoRolesAssignedException },
                 { typeof(InvalidSmartEnumPropertyName), HandleInvalidSmartEnumException }
             };
+        _logger = logger;
+
     }
 
     public override void OnException(ExceptionContext context)
     {
+        _logger.LogError(context.Exception, "appException");
         HandleException(context);
         base.OnException(context);
     }

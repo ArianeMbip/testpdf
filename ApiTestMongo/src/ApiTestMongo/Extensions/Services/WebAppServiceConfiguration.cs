@@ -14,6 +14,7 @@ using Sieve.Services;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using ApiTestMongo.Gotenberg;
 
 public static class WebAppServiceConfiguration
 {
@@ -51,6 +52,12 @@ public static class WebAppServiceConfiguration
 
         builder.Services.AddHealthChecks();
         builder.Services.AddSwaggerExtension();
+
+        builder.Services.AddHttpClient("gotenberg", c =>
+        {
+            c.BaseAddress = new Uri(Environment.GetEnvironmentVariable("GOTENBERG_BASEURL"));
+        });
+        builder.Services.AddScoped<IGotenbergService, GotenbergService>();
     }
 
     /// <summary>

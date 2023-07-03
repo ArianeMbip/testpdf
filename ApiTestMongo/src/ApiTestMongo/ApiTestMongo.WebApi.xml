@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiTestMongo</name>
+    </assembly>
+    <members>
+        <member name="M:ApiTestMongo.Controllers.v1.ElevesController.AddEleve(ApiTestMongo.Domain.Eleves.Dtos.EleveForCreationDto)">
+            <summary>
+            Creates a new Eleve record.
+            </summary>
+            <response code="201">Eleve created.</response>
+            <response code="400">Eleve has missing/invalid values.</response>
+            <response code="500">There was an error on the server while creating the Eleve.</response>
+        </member>
+        <member name="M:ApiTestMongo.Controllers.v1.ElevesController.GetEleve(System.Guid)">
+            <summary>
+            Gets a single Eleve by ID.
+            </summary>
+            <response code="200">Eleve record returned successfully.</response>
+            <response code="400">Eleve has missing/invalid values.</response>
+            <response code="500">There was an error on the server while creating the Eleve.</response>
+        </member>
+        <member name="M:ApiTestMongo.Controllers.v1.ElevesController.GetEleves(ApiTestMongo.Domain.Eleves.Dtos.EleveParametersDto)">
+             <summary>
+             Gets a list of all Eleves.
+             </summary>
+             <response code="200">Eleve list returned successfully.</response>
+             <response code="400">Eleve has missing/invalid values.</response>
+             <response code="500">There was an error on the server while creating the Eleve.</response>
+             <remarks>
+             Requests can be narrowed down with a variety of query string values:
+             ## Query String Parameters
+             - **PageNumber**: An integer value that designates the page of records that should be returned.
+             - **PageSize**: An integer value that designates the number of records returned on the given page that you would like to return. This value is capped by the internal MaxPageSize.
+             - **SortOrder**: A comma delimited ordered list of property names to sort by. Adding a `-` before the name switches to sorting descendingly.
+             - **Filters**: A comma delimited list of fields to filter by formatted as `{Name}{Operator}{Value}` where
+                 - {Name} is the name of a filterable property. You can also have multiple names (for OR logic) by enclosing them in brackets and using a pipe delimiter, eg. `(LikeCount|CommentCount)>10` asks if LikeCount or CommentCount is >10
+                 - {Operator} is one of the Operators below
+                 - {Value} is the value to use for filtering. You can also have multiple values (for OR logic) by using a pipe delimiter, eg.`Title@= new|hot` will return posts with titles that contain the text "new" or "hot"
+            
+                | Operator | Meaning                       | Operator  | Meaning                                      |
+                | -------- | ----------------------------- | --------- | -------------------------------------------- |
+                | `==`     | Equals                        |  `!@=`    | Does not Contains                            |
+                | `!=`     | Not equals                    |  `!_=`    | Does not Starts with                         |
+                | `>`      | Greater than                  |  `@=*`    | Case-insensitive string Contains             |
+                | `&lt;`   | Less than                     |  `_=*`    | Case-insensitive string Starts with          |
+                | `>=`     | Greater than or equal to      |  `==*`    | Case-insensitive string Equals               |
+                | `&lt;=`  | Less than or equal to         |  `!=*`    | Case-insensitive string Not equals           |
+                | `@=`     | Contains                      |  `!@=*`   | Case-insensitive string does not Contains    |
+                | `_=`     | Starts with                   |  `!_=*`   | Case-insensitive string does not Starts with |
+             </remarks>
+        </member>
+        <member name="M:ApiTestMongo.Controllers.v1.ElevesController.DeleteEleve(System.Guid)">
+            <summary>
+            Deletes an existing Eleve record.
+            </summary>
+            <response code="204">Eleve deleted.</response>
+            <response code="400">Eleve has missing/invalid values.</response>
+            <response code="500">There was an error on the server while creating the Eleve.</response>
+        </member>
+        <member name="M:ApiTestMongo.Controllers.v1.ElevesController.UpdateEleve(System.Guid,ApiTestMongo.Domain.Eleves.Dtos.EleveForUpdateDto)">
+            <summary>
+            Updates an entire existing Eleve.
+            </summary>
+            <response code="204">Eleve updated.</response>
+            <response code="400">Eleve has missing/invalid values.</response>
+            <response code="500">There was an error on the server while creating the Eleve.</response>
+        </member>
+        <member name="M:ApiTestMongo.Databases.EntityConfigurations.EleveConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{ApiTestMongo.Domain.Eleves.Eleve})">
+            <summary>
+            The database configuration for Eleves. 
+            </summary>
+        </member>
+        <member name="M:ApiTestMongo.Extensions.Services.ExtensionGotenberg.GetSize(ApiTestMongo.Gotenberg.Resources.PaperSizeEnum)">
+            <summary>
+            Get width and Height of a Paper
+            </summary>
+            <param name="paperSizeEnum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiTestMongo.Extensions.Services.WebAppServiceConfiguration.AddBoundaryServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Reflection.Assembly[])">
+            <summary>
+            Registers all services in the assembly of the given interface.
+            </summary>
+        </member>
+        <member name="M:ApiTestMongo.Gotenberg.Commands.ConvertUrlToPdfCommand.GetFormData">
+            <summary>
+            Get Formdata to send to Gotenberg
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.IO.FileNotFoundException">Throw if an asset or a file is not found</exception>
+        </member>
+        <member name="M:ApiTestMongo.Gotenberg.GotenbergService.ConvertHtmlToPdf(ApiTestMongo.Gotenberg.Commands.ConvertHtmlToPdfCommand)">
+            <summary>
+            Convert html to pdf
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiTestMongo.Gotenberg.GotenbergService.ConvertMarkdownToPdf(ApiTestMongo.Gotenberg.Commands.ConvertMarkdownTopdfCommand)">
+            <summary>
+            Convert markdown to pdf
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiTestMongo.Gotenberg.GotenbergService.ConvertOfficeToPdf(ApiTestMongo.Gotenberg.Commands.ConvertOfficeToPdfCommand)">
+            <summary>
+            Convert Office to Pdf
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiTestMongo.Gotenberg.GotenbergService.ConvertUrlToPdf(ApiTestMongo.Gotenberg.Commands.ConvertUrlToPdfCommand)">
+            <summary>
+            This route accepts a form field url with the URL of the page you want to convert to PDF.
+            </summary>
+            <param name="command">The command to launch the conversion of the url to Pdf</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiTestMongo.Gotenberg.IGotenbergService.ConvertUrlToPdf(ApiTestMongo.Gotenberg.Commands.ConvertUrlToPdfCommand)">
+            <summary>
+            Convert an url to pdf
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiTestMongo.Gotenberg.IGotenbergService.ConvertHtmlToPdf(ApiTestMongo.Gotenberg.Commands.ConvertHtmlToPdfCommand)">
+            <summary>
+            Convert html to pdf
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiTestMongo.Gotenberg.IGotenbergService.ConvertMarkdownToPdf(ApiTestMongo.Gotenberg.Commands.ConvertMarkdownTopdfCommand)">
+            <summary>
+            Convert markdown to pdf
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiTestMongo.Gotenberg.IGotenbergService.ConvertOfficeToPdf(ApiTestMongo.Gotenberg.Commands.ConvertOfficeToPdfCommand)">
+            <summary>
+            Convert Office to Pdf
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.GotenbergChromiumConvertProperties.PaperProperties">
+            <summary>
+            The properties of the result pdf
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.GotenbergChromiumConvertProperties.WaitDelay">
+            <summary>
+            Duration to wait when loading an HTML document before converting it to PDF
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.GotenbergChromiumConvertProperties.WaitWindowStatut">
+            <summary>
+            The window.status value to wait for before converting an HTML document to PDF
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.GotenbergChromiumConvertProperties.ExtraHttpHeaders">
+            <summary>
+             HTTP headers to send by Chromium while loading the HTML document (JSON format)
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.GotenbergChromiumConvertProperties.NativePageRanges">
+            <summary>
+            Page ranges to print, e.g., '1-5, 8, 11-13' - empty means all pages
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.GotenbergChromiumConvertProperties.PdfFormat">
+            <summary>
+            The PDF format of the resulting PDF
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.GotenbergChromiumConvertProperties.Assets">
+            <summary>
+            List of Assets (fonts, stylesheets, images)
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.PaperProperties.PaperWidth">
+            <summary>
+            Paper width, in inches (default 8.5)
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.PaperProperties.PaperHeight">
+            <summary>
+            Paper height, in inches (default 11)
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.PaperProperties.MarginTop">
+            <summary>
+            Top margin, in inches (default 0.39)
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.PaperProperties.MarginBottom">
+            <summary>
+            Bottom margin, in inches (default 0.39)
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.PaperProperties.MarginLeft">
+            <summary>
+            Left margin, in inches (default 0.39)
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.PaperProperties.MarginRight">
+            <summary>
+            Right margin, in inches (default 0.39)
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.PaperProperties.PreferCssPageSize">
+            <summary>
+            Define whether to prefer page size as defined by CSS (default false)
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.PaperProperties.PrintBackground">
+            <summary>
+            Print the background graphics (default false)
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.PaperProperties.Landscape">
+            <summary>
+            Set the paper orientation to landscape (default false)
+            </summary>
+        </member>
+        <member name="P:ApiTestMongo.Gotenberg.Resources.PaperProperties.Scale">
+            <summary>
+            The scale of the page rendering (default 1.0)
+            </summary>
+        </member>
+        <member name="T:Refit.Implementation.Generated">
+            <inheritdoc />
+        </member>
+        <member name="T:Refit.Implementation.Generated.ApiTestMongoGotenbergIGotenbergApi">
+            <inheritdoc />
+        </member>
+        <member name="P:Refit.Implementation.Generated.ApiTestMongoGotenbergIGotenbergApi.Client">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.ApiTestMongoGotenbergIGotenbergApi.#ctor(System.Net.Http.HttpClient,Refit.IRequestBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.ApiTestMongoGotenbergIGotenbergApi.ConvertHtmlToPdf(Refit.StreamPart,Refit.StreamPart,Refit.StreamPart,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.ApiTestMongoGotenbergIGotenbergApi.ApiTestMongo#Gotenberg#IGotenbergApi#ConvertHtmlToPdf(Refit.StreamPart,Refit.StreamPart,Refit.StreamPart,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

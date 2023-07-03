@@ -18,7 +18,10 @@
         "RMQ_USERNAME": "guest",
         "RMQ_PASSWORD": "guest",
         "RMQ_PORT": "58287",
-        "JAEGER_HOST": "localhost"
+        "JAEGER_HOST": "localhost",
+
+        //"GOTENBERG_BASEURL": "http://gotenberg.orange.local",
+        "GOTENBERG_BASEURL": "http://localhost:3000"
       },
       "applicationUrl": "https://localhost:5000"
     }

@@ -34,5 +34,6 @@ public static class GetEleve
             var result = await _eleveRepository.GetById(request.Id, cancellationToken: cancellationToken);
             return _mapper.Map<EleveDto>(result);
         }
+       
     }
 }

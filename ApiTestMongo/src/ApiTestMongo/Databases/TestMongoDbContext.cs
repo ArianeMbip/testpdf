@@ -5,8 +5,7 @@ using ApiTestMongo.Databases.EntityConfigurations;
 using ApiTestMongo.Services;
 using ApiTestMongo.Domain.Eleves;
 using MediatR;
-using ApiTestMongo.Domain.RolePermissions;
-using ApiTestMongo.Domain.Users;
+
 using ApiTestMongo.Domain.Eleves;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -31,9 +30,7 @@ public sealed class TestMongoDbContext : DbContext
 
     #region DbSet Region - Do Not Delete
     public DbSet<Eleve> Eleves { get; set; }
-    public DbSet<UserRole> UserRoles { get; set; }
-    public DbSet<User> Users { get; set; }
-    public DbSet<RolePermission> RolePermissions { get; set; }
+    
     #endregion DbSet Region - Do Not Delete
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -47,9 +44,7 @@ public sealed class TestMongoDbContext : DbContext
 
         #region Entity Database Config Region - Only delete if you don't want to automatically add configurations
         modelBuilder.ApplyConfiguration(new EleveConfiguration());
-        modelBuilder.ApplyConfiguration(new UserRoleConfiguration());
-        modelBuilder.ApplyConfiguration(new UserConfiguration());
-        modelBuilder.ApplyConfiguration(new RolePermissionConfiguration());
+       
         #endregion Entity Database Config Region - Only delete if you don't want to automatically add configurations
     }
 

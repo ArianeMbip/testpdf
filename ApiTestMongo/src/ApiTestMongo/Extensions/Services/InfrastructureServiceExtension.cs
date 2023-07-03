@@ -42,8 +42,8 @@ public static class ServiceRegistration
         {
         });
 
-        services.AddHeimGuard<UserPolicyHandler>()
-            .MapAuthorizationPolicies()
-            .AutomaticallyCheckPermissions();
+        //services.AddHeimGuard<UserPolicyHandler>()
+        //    .MapAuthorizationPolicies()
+        //    .AutomaticallyCheckPermissions();
     }
 }
